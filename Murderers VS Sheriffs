@@ -77,16 +77,9 @@ Tab:AddToggle({
         end
 end
 })
-
-local Tab = Window:MakeTab({
-    Name = "Teleport",
-    Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-
-local Section = Tab:AddSection({
-    Name = "Tp to Players:"
+local Section = Tab:AddSection ({
+    Name = "Tp to players:"
 })
-
 Tab:AddParagraph("Важно!", "Данная функция позволяет вам телепортироваться к любому игроку, чтобы обновить список игроков, вам нужно переинжектить скрипт.")
 
 local plrs = game.Players
@@ -238,9 +231,9 @@ Tab:AddSlider({
     Name = "Camera Zoom Distance",
         Min = 0,
         Max = 20000,
-        Default = math.floor(game.Players.LocalPlayer.CameraMaxZoomDistance) or 0,
+        Default = 0,
         Color = Color3.fromRGB(1, 217, 255),
-        Increment = 0.001,
+        Increment = 0.1,
         ValueName = "CamZoomDis",
         Callback = function(Value)
             game.Players.LocalPlayer.CameraMaxZoomDistance = Value
@@ -259,8 +252,6 @@ Tab:AddSlider({
 	    game.Players.LocalPlayer.Chatacter.Humanoid.Gravity = Value
 	    end
 })
-
-
 
 local Tab = Window:MakeTab({
     Name = "Settings",
